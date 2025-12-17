@@ -32,6 +32,12 @@ const count = ref(0)
     >.
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <h1>{{ $t('home.test') }}</h1>
+  <div class="locale-changer">
+    <select v-model="$i18n.locale">
+      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+    </select>
+  </div>
 </template>
 
 <style scoped>
