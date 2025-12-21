@@ -31,6 +31,9 @@ const count = ref(0)
       >Vue Docs Scaling up Guide</a
     >.
   </p>
+  <button class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+    Click me
+  </button>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
   <h1>{{ $t('home.test') }}</h1>
   <div class="locale-changer">
