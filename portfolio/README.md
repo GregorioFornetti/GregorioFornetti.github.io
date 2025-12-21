@@ -7,3 +7,11 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 https://vue-i18n.intlify.dev/guide/essentials/started.html
 
 https://v2.tailwindcss.com/docs/guides/vue-3-vite
+
+## Deploy
+
+```
+npm run build
+```
+
+Depois, jogar o que foi gerado em `portfolio/src/dist` no repositório principal do GitHub
