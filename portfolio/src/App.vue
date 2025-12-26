@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import BaseModal from './components/BaseModal.vue';
+import BaseCard from './components/BaseCard.vue';
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
@@ -46,7 +47,6 @@ function closeModal() {
   <button @click="openModal" class="m-4 p-2 bg-blue-500 text-white rounded">
     Open Modal
   </button>
-  <!-- CreateLobbyModal -->
   <BaseModal
     title="Modal de teste"
     :show="showModal"
@@ -56,6 +56,19 @@ function closeModal() {
       <h1>Oi =D</h1>
     </template>
   </BaseModal>
+
+  <BaseCard
+    title="Card Title"
+    img_path="./assets/projects/conecta2030.jpg"
+    img_alt="Placeholder Image"
+  >
+    <template #card-body>
+      This is a sample card body text. This is a sample card body text. This is a sample card body text. This is a sample card body text. This is a sample card body text.
+    </template>
+    <template #modal-body>
+      This is the content of the modal opened from the card.
+    </template>
+  </BaseCard>
 </template>
 
 <style scoped>
