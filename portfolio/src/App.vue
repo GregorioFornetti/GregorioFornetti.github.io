@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { h, ref } from 'vue';
 import BaseModal from './components/BaseModal.vue';
 import BaseCard from './components/BaseCard.vue';
 
@@ -66,7 +66,14 @@ function closeModal() {
       This is a sample card body text. This is a sample card body text. This is a sample card body text. This is a sample card body text. This is a sample card body text.
     </template>
     <template #modal-body>
-      This is the content of the modal opened from the card.
+      <h2 class="modal_heading">Modal Title</h2>
+      <p class="modal_paragraph">
+        This is the content of the modal. Here you can put more detailed information about the card.
+      </p>
+      <h2 class="modal_heading">Another Section</h2>
+      <p class="modal_paragraph">
+        Additional content can go here. You can include images, text, or any other elements you need.
+      </p>
     </template>
   </BaseCard>
 </template>
