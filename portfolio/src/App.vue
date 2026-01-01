@@ -2,6 +2,7 @@
 import { h, ref } from 'vue';
 import BaseModal from './components/BaseModal.vue';
 import BaseCard from './components/BaseCard.vue';
+import ProjectCard from './components/ProjectCard.vue';
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
@@ -57,25 +58,14 @@ function closeModal() {
     </template>
   </BaseModal>
 
-  <BaseCard
-    title="Card Title"
+  <ProjectCard
+    title="Project Title"
     img_path="./assets/projects/conecta2030.jpg"
-    img_alt="Placeholder Image"
-  >
-    <template #card-body>
-      This is a sample card body text. This is a sample card body text. This is a sample card body text. This is a sample card body text. This is a sample card body text.
-    </template>
-    <template #modal-body>
-      <h2 class="modal_heading">Modal Title</h2>
-      <p class="modal_paragraph">
-        This is the content of the modal. Here you can put more detailed information about the card.
-      </p>
-      <h2 class="modal_heading">Another Section</h2>
-      <p class="modal_paragraph">
-        Additional content can go here. You can include images, text, or any other elements you need.
-      </p>
-    </template>
-  </BaseCard>
+    img_alt="Project Image"
+    about_text="This is a brief description of the project. It provides an overview of what the project is about."
+    contributions_text="Here are the details of my contributions to the project. I worked on various aspects including development, design, and testing."
+    project_url="https://example.com/project"
+  />
 </template>
 
 <style scoped>
