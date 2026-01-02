@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { marked } from 'marked'
 import BaseCard from './BaseCard.vue';
 
-defineProps<{
+const props = defineProps<{
   title: string,
   img_path: string,
   img_alt: string,
@@ -9,6 +11,9 @@ defineProps<{
   contributions_text: string,
   project_url?: string
 }>();
+
+const abstract_text_md = computed(() => marked.parse(props.abstract_text));
+const contributions_text_md = computed(() => marked.parse(props.contributions_text));
 </script>
 
 <template>
@@ -18,7 +23,7 @@ defineProps<{
     :img_alt="img_alt"
   >
     <template #card-body>
-      {{ abstract_text }}
+      <p v-html="abstract_text_md"></p>
     </template>
     <template #modal-body>
       <div class="mb-4">
@@ -34,12 +39,10 @@ defineProps<{
       </a>
       </div>
       <h2 class="modal_heading">Abstract</h2>
-      <p class="modal_paragraph">
-        {{ abstract_text }}
+      <p class="modal_paragraph" v-html="abstract_text_md">
       </p>
       <h2 class="modal_heading">My contributions</h2>
-      <p class="modal_paragraph">
-        {{ contributions_text }}
+      <p class="modal_paragraph" v-html="contributions_text_md">
       </p>
     </template>
   </BaseCard>

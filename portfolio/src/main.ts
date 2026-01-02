@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import i18n from './plugins/i18n';
 import './index.css'
+import './marked_config'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
