@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { h, ref } from 'vue';
-import BaseModal from './components/BaseModal.vue';
-import BaseCard from './components/BaseCard.vue';
-import ProjectCard from './components/ProjectCard.vue';
+import BaseModal from './components/modal/BaseModal.vue';
+import BaseCard from './components/card/BaseCard.vue';
+import ProjectCard from './components/card/ProjectCard.vue';
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
@@ -59,11 +59,11 @@ function closeModal() {
   </BaseModal>
 
   <ProjectCard
-    title="Project Title"
+    title="Conecta2030"
     img_path="./assets/projects/conecta2030.jpg"
-    img_alt="Project Image"
-    about_text="This is a brief description of the project. It provides an overview of what the project is about."
-    contributions_text="Here are the details of my contributions to the project. I worked on various aspects including development, design, and testing."
+    img_alt="Conecta2030 logo"
+    about_text="Conecta2030 is a project that used 5G, Cellular Vehicle-to-Everything, digital twins, and artificial intelligence to detect risky situations involving vulnerable road users (VRUs), such as pedestrians, cyclists, and motorcyclists. The project had multidisciplinary teams from different universities: Federal University of São Carlos (UFSCar), São Paulo University (USP), Institute of Research of Centro Universitário Facens (IP FACENS), and Germany’s Technische Hochschule Ingolstadt (THI). The project also received collaborations from TIM Brasil and Stellantis. Worth highlighting that this project was approved in the Rota 2030 Program."
+    contributions_text="As a member of the AI team, I mainly developed 3D perception models. I trained SECOND and BEVFusion models in simulated and real infrastructure (roadside) view datasets. Besides that, I implemented a 3D tracking and trajectory prediction model, coupled with the MMDetection3D library, creating a framework that detects, tracks, and predicts trajectories, which was used in the final project infrastructure. I also modified the simulated DOLPHINS dataset for our scenario, adding VRU objects for cyclists and motorcyclists, and tracking IDs for tracking and trajectory evaluation. Finally, I generated risky simulated scenarios in CARLA to evaluate our models with different LiDAR sensors."
     project_url="https://example.com/project"
   />
 </template>
