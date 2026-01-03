@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { h, ref } from 'vue';
-import BaseModal from './components/modal/BaseModal.vue';
-import BaseCard from './components/card/BaseCard.vue';
+import Header from './components/Header.vue';
 import ProjectCard from './components/card/ProjectCard.vue';
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -21,18 +19,10 @@ function toggleDarkMode() {
   }
 }
 
-const showModal = ref(false)
-
-function openModal() {
-  showModal.value = true
-}
-
-function closeModal() {
-  showModal.value = false
-}
 </script>
 
 <template>
+  <Header />
   <button @click="toggleDarkMode" class="m-4 p-2 bg-gray-200 dark:bg-gray-800 rounded">
     Toggle Dark Mode
   </button>
@@ -43,20 +33,6 @@ function closeModal() {
       <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
     </select>
   </div>
-
-
-  <button @click="openModal" class="m-4 p-2 bg-blue-500 text-white rounded">
-    Open Modal
-  </button>
-  <BaseModal
-    title="Modal de teste"
-    :show="showModal"
-    :close-modal="closeModal"
-  >
-    <template #body>
-      <h1>Oi =D</h1>
-    </template>
-  </BaseModal>
 
   <ProjectCard
     title="Conecta2030"

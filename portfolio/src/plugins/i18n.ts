@@ -7,10 +7,10 @@ const I18n = createI18n({
   legacy: false,
   locale: 'pt-BR',
   messages: {
-    'pt-BR': {
+    'PT-BR': {
         'home': home_ptBR
     },
-    'en': {
+    'EN': {
         'home': home_en
     }
   }
