@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import Header from './components/Header.vue';
 import ProjectCard from './components/card/ProjectCard.vue';
+import { i18n } from './plugins/i18n';
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
 } else {
   document.documentElement.classList.remove('dark')
+}
+
+if (localStorage.locale) {
+  i18n.locale.value = localStorage.locale
+} else {
+  localStorage.locale = i18n.locale.value
 }
 
 function toggleDarkMode() {

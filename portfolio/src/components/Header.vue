@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
+import { i18n } from '../plugins/i18n'
 
 const isDark = ref(localStorage.theme === 'dark')
 const menuOpen = ref(false)
-const language = ref<'en' | 'pt'>('en')
 
 function toggleTheme() {
   isDark.value = !isDark.value
@@ -15,8 +15,8 @@ function toggleMenu() {
   menuOpen.value = !menuOpen.value
 }
 
-function setLanguage(lang: 'en' | 'pt') {
-  language.value = lang
+function languageChanged() {
+  localStorage.setItem('locale', i18n.locale.value)
 }
 </script>
 
@@ -43,7 +43,7 @@ function setLanguage(lang: 'en' | 'pt') {
             <span v-else>☀️</span>
           </button>
 
-          <select v-model="$i18n.locale" class="header_select">
+          <select @change="languageChanged" v-model="$i18n.locale" class="header_select">
             <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
           </select>
         </div>
@@ -68,7 +68,7 @@ function setLanguage(lang: 'en' | 'pt') {
             <span v-else>☀️ Light</span>
           </button>
 
-          <select v-model="$i18n.locale" class="header_select">
+          <select @change="languageChanged" v-model="$i18n.locale" class="header_select">
             <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
           </select>
         </div>
@@ -85,13 +85,13 @@ function setLanguage(lang: 'en' | 'pt') {
 }
 
 .header_select {
-    @apply bg-transparent border border-gray-300 dark:border-gray-600
-            rounded-md px-2 py-1 text-sm
-            dark:text-white dark:bg-gray-900
+  @apply bg-transparent border border-gray-300 dark:border-gray-600
+         rounded-md px-2 py-1 text-sm
+         dark:text-white dark:bg-gray-900
 }
 
 .theme_toggle {
-    @apply p-2 rounded-lg
-            hover:bg-gray-100 dark:hover:bg-gray-800;
+  @apply p-2 rounded-lg
+         hover:bg-gray-100 dark:hover:bg-gray-800;
 }
 </style>
