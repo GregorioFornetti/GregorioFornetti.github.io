@@ -57,10 +57,10 @@ function languageChanged() {
     <!-- Mobile menu -->
     <div v-if="menuOpen" class="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-4">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#publications">Publications</a>
-        <a class="nav-link" href="#people">People</a>
+        <a class="nav-link" href="#home">{{ $t('header.home') }}</a>
+        <a class="nav-link" href="#experience">{{ $t('header.experience') }}</a>
+        <a class="nav-link" href="#publications">{{ $t('header.publications') }}</a>
+        <a class="nav-link" href="#people">{{ $t('header.people') }}</a>
 
         <div class="flex items-center justify-between pt-4">
           <button @click="toggleTheme" class="theme_toggle">
