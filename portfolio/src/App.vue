@@ -30,11 +30,7 @@ function toggleDarkMode() {
 
 <template>
   <Header />
-  <button @click="toggleDarkMode" class="m-4 p-2 bg-gray-200 dark:bg-gray-800 rounded">
-    Toggle Dark Mode
-  </button>
-
-  <h1>{{ $t('home.test') }}</h1>
+  
   <div class="locale-changer">
     <select v-model="$i18n.locale">
       <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>

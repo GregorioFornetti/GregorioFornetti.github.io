@@ -1,6 +1,10 @@
 import { createI18n } from 'vue-i18n';
+
 import home_ptBR from '../content/pt-BR/home.json';
 import home_en from '../content/en/home.json';
+
+import header_ptBR from '../content/pt-BR/header.json';
+import header_en from '../content/en/header.json';
 
 const I18n = createI18n({
   // For use with Vue Composition API
@@ -8,10 +12,12 @@ const I18n = createI18n({
   locale: 'PT-BR',
   messages: {
     'PT-BR': {
-        'home': home_ptBR
+        'home': home_ptBR,
+        'header': header_ptBR
     },
     'EN': {
-        'home': home_en
+        'home': home_en,
+        'header': header_en
     }
   }
 });

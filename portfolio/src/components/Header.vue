@@ -30,10 +30,10 @@ function languageChanged() {
         </div>
 
         <nav class="hidden md:flex space-x-8 text-sm font-medium">
-          <a class="nav-link" href="#home">Home</a>
-          <a class="nav-link" href="#experience">Experience</a>
-          <a class="nav-link" href="#publications">Publications</a>
-          <a class="nav-link" href="#people">People</a>
+          <a class="nav-link" href="#home">{{ $t('header.home') }}</a>
+          <a class="nav-link" href="#experience">{{ $t('header.experience') }}</a>
+          <a class="nav-link" href="#publications">{{ $t('header.publications') }}</a>
+          <a class="nav-link" href="#people">{{ $t('header.people') }}</a>
         </nav>
 
         <div class="hidden md:flex items-center space-x-4 w-1/4 justify-end">
