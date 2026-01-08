@@ -18,6 +18,12 @@ function toggleMenu() {
 function languageChanged() {
   localStorage.setItem('locale', i18n.locale.value)
 }
+
+const selectedSection = defineModel()
+
+function defineSelectedSection(section: string) {
+  selectedSection.value = section
+}
 </script>
 
 <template>
@@ -30,10 +36,10 @@ function languageChanged() {
         </div>
 
         <nav class="hidden md:flex space-x-8 text-sm font-medium">
-          <a class="nav-link" href="#home">{{ $t('header.home') }}</a>
-          <a class="nav-link" href="#experience">{{ $t('header.experience') }}</a>
-          <a class="nav-link" href="#publications">{{ $t('header.publications') }}</a>
-          <a class="nav-link" href="#people">{{ $t('header.people') }}</a>
+          <a class="nav-link" @click="defineSelectedSection('home')">{{ $t('header.home') }}</a>
+          <a class="nav-link" @click="defineSelectedSection('experience')">{{ $t('header.experience') }}</a>
+          <a class="nav-link" @click="defineSelectedSection('publications')">{{ $t('header.publications') }}</a>
+          <a class="nav-link" @click="defineSelectedSection('people')">{{ $t('header.people') }}</a>
         </nav>
 
         <div class="hidden md:flex items-center space-x-4 w-1/4 justify-end">
@@ -89,7 +95,7 @@ function languageChanged() {
 .nav-link {
   @apply text-gray-700 dark:text-gray-200
          hover:text-blue-600 dark:hover:text-blue-400
-         transition-colors;
+         transition-colors cursor-pointer;
 }
 
 .header_select {
