@@ -53,7 +53,7 @@ function languageChanged() {
         </div>
 
         <button @click="toggleMenu" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-          ☰
+          <font-awesome-icon icon="fa-solid fa-bars" class="text-gray-700 dark:text-gray-200" />
         </button>
       </div>
     </div>
