@@ -39,8 +39,12 @@ function languageChanged() {
         <div class="hidden md:flex items-center space-x-4 w-1/4 justify-end">
 
           <button @click="toggleTheme" class="theme_toggle" aria-label="Toggle dark mode">
-            <span v-if="isDark">🌙</span>
-            <span v-else>☀️</span>
+            <span v-if="isDark">
+              <font-awesome-icon icon="fa-solid fa-moon" class="text-gray-500" />
+            </span>
+            <span v-else>
+              <font-awesome-icon icon="fa-solid fa-sun" class="text-orange-400" />
+            </span>
           </button>
 
           <select @change="languageChanged" v-model="$i18n.locale" class="header_select">
@@ -64,8 +68,12 @@ function languageChanged() {
 
         <div class="flex items-center justify-between pt-4">
           <button @click="toggleTheme" class="theme_toggle">
-            <span v-if="isDark">🌙 Dark</span>
-            <span v-else>☀️ Light</span>
+            <span v-if="isDark">
+              <font-awesome-icon icon="fa-solid fa-moon" class="text-gray-500" />
+            </span>
+            <span v-else>
+              <font-awesome-icon icon="fa-solid fa-sun" class="text-orange-400" />
+            </span>
           </button>
 
           <select @change="languageChanged" v-model="$i18n.locale" class="header_select">
