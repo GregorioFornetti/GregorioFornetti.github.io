@@ -1,5 +1,5 @@
 
-import { faLink, faArrowRight, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { faLink, faArrowRight, faMoon, faSun, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-library.add(faLink, faArrowRight, faMoon, faSun)
+library.add(faLink, faArrowRight, faMoon, faSun, faXmark)
