@@ -36,10 +36,18 @@ function defineSelectedSection(section: string) {
         </div>
 
         <nav class="hidden md:flex space-x-8 text-sm font-medium">
-          <a class="nav-link" @click="defineSelectedSection('home')">{{ $t('header.home') }}</a>
-          <a class="nav-link" @click="defineSelectedSection('experience')">{{ $t('header.experience') }}</a>
-          <a class="nav-link" @click="defineSelectedSection('publications')">{{ $t('header.publications') }}</a>
-          <a class="nav-link" @click="defineSelectedSection('people')">{{ $t('header.people') }}</a>
+          <a class="nav-link" @click="defineSelectedSection('home')" :class="{ active: selectedSection === 'home' }" >
+            {{ $t('header.home') }}
+          </a>
+          <a class="nav-link" @click="defineSelectedSection('experience')" :class="{ active: selectedSection === 'experience' }">
+            {{ $t('header.experience') }}
+          </a>
+          <a class="nav-link" @click="defineSelectedSection('publications')" :class="{ active: selectedSection === 'publications' }">
+            {{ $t('header.publications') }}
+          </a>
+          <a class="nav-link" @click="defineSelectedSection('people')" :class="{ active: selectedSection === 'people' }">
+            {{ $t('header.people') }}
+          </a>
         </nav>
 
         <div class="hidden md:flex items-center space-x-4 w-1/4 justify-end">
@@ -67,10 +75,18 @@ function defineSelectedSection(section: string) {
     <!-- Mobile menu -->
     <div v-if="menuOpen" class="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-4">
-        <a class="nav-link" href="#home">{{ $t('header.home') }}</a>
-        <a class="nav-link" href="#experience">{{ $t('header.experience') }}</a>
-        <a class="nav-link" href="#publications">{{ $t('header.publications') }}</a>
-        <a class="nav-link" href="#people">{{ $t('header.people') }}</a>
+          <a class="nav-link" @click="defineSelectedSection('home')" :class="{ active: selectedSection === 'home' }" >
+            {{ $t('header.home') }}
+          </a>
+          <a class="nav-link" @click="defineSelectedSection('experience')" :class="{ active: selectedSection === 'experience' }">
+            {{ $t('header.experience') }}
+          </a>
+          <a class="nav-link" @click="defineSelectedSection('publications')" :class="{ active: selectedSection === 'publications' }">
+            {{ $t('header.publications') }}
+          </a>
+          <a class="nav-link" @click="defineSelectedSection('people')" :class="{ active: selectedSection === 'people' }">
+            {{ $t('header.people') }}
+          </a>
 
         <div class="flex items-center justify-between pt-4">
           <button @click="toggleTheme" class="theme_toggle">
@@ -96,6 +112,10 @@ function defineSelectedSection(section: string) {
   @apply text-gray-700 dark:text-gray-200
          hover:text-blue-600 dark:hover:text-blue-400
          transition-colors cursor-pointer;
+}
+
+.nav-link.active {
+  @apply font-bold text-blue-600 dark:text-blue-400;
 }
 
 .header_select {

@@ -28,7 +28,6 @@ function closeModal() {
             hover:-translate-y-1 hover:shadow-lg"
       @click="openModal"
     >
-      <!-- IMAGEM (sem border) -->
       <div class="h-36 overflow-hidden rounded-t-lg">
         <img
           class="w-full h-full object-cover
