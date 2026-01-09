@@ -75,16 +75,16 @@ function defineSelectedSection(section: string) {
     <!-- Mobile menu -->
     <div v-if="menuOpen" class="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-4">
-          <a class="nav-link" @click="defineSelectedSection('home')" :class="{ active: selectedSection === 'home' }" >
+          <a class="nav-link" @click="() => {defineSelectedSection('home'); toggleMenu()}" :class="{ active: selectedSection === 'home' }" >
             {{ $t('header.home') }}
           </a>
-          <a class="nav-link" @click="defineSelectedSection('experience')" :class="{ active: selectedSection === 'experience' }">
+          <a class="nav-link" @click="() => {defineSelectedSection('experience'); toggleMenu()}" :class="{ active: selectedSection === 'experience' }">
             {{ $t('header.experience') }}
           </a>
-          <a class="nav-link" @click="defineSelectedSection('publications')" :class="{ active: selectedSection === 'publications' }">
+          <a class="nav-link" @click="() => {defineSelectedSection('publications'); toggleMenu()}" :class="{ active: selectedSection === 'publications' }">
             {{ $t('header.publications') }}
           </a>
-          <a class="nav-link" @click="defineSelectedSection('people')" :class="{ active: selectedSection === 'people' }">
+          <a class="nav-link" @click="() => {defineSelectedSection('people'); toggleMenu()}" :class="{ active: selectedSection === 'people' }">
             {{ $t('header.people') }}
           </a>
 
