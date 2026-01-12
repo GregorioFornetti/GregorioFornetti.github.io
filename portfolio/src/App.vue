@@ -45,5 +45,6 @@ const selectedOption = ref<'home'|'experience'|'publications'|'people'>('home')
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 </style>
