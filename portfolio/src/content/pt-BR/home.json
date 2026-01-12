@@ -1,3 +1,6 @@
 {
-    "test": "Teste"
+    "profession": "Estudante de Mestrado em Ciência da Computação",
+    "greeting": "Olá!",
+    "university": "[Universidade Federal de São Carlos (UFSCar)](https://www.ufscar.br/)",
+    "summary": "Eu sou o Greg, estudante de Mestrado (MSc) na [Universidade Federal de São Carlos (UFSCar)](https://www.ufscar.br/), estudante de intercâmbio na [Technische Hochschule Ingolstadt (THI)](https://www.thi.de/) e membro do [Laboratório de Sistemas Inteligentes e Ciência de Dados (LaSID)](https://lasid.dcomp.ufscar.br/). Atualmente, minha pesquisa é focada em visão computacional, aplicando detecção de objetos 3D, rastreamento e predição de trajetórias para segurança no trânsito, no contexto do [projeto Conecta 2030](https://aware.thi.de/en/sobre-aware/press-releases/detail-news/news/projekt-conecta-2030-mehr-strassensicherheit-mit-spitzentechnologie/). Na mesma linha, minha pesquisa de mestrado propõe um novo método de filtragem de *background* em nuvens de pontos, que pode trazer melhorias em precisão e eficiência para modelos de detecção de objetos 3D. Também contribuo para o grupo de Sistemas de Recomendação do LaSID (LaSID RecSys), onde implemento e pesquiso sistemas de recomendação incrementais. Obtive o grau de Bacharel em Ciência da Computação (BSc) pela UFSCar e, nesse período, foquei meus estudos em Inteligência Artificial (IA) e Aprendizado de Máquina (AM), realizando uma iniciação científica com bolsa na área."
 }
