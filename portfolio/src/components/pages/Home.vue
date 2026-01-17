@@ -3,6 +3,8 @@ import { computed } from 'vue'
 import { marked } from 'marked'
 import { i18n } from '../../plugins/i18n';
 import LattesIcon from '../LattesIcon.vue';
+import PaperCard from '../card/PaperCard.vue';
+import ProjectCard from '../card/ProjectCard.vue';
 
 const university_md = computed(() => marked.parse(i18n.t('home.university')));
 const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
@@ -13,7 +15,7 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
         <!-- Profile information -->
         <div class="xl:flex">
             <div class="ml-auto flex flex-col items-center text-center">
-                <img src="../../../assets/avatar.jpeg" alt="Profile Picture" class="w-72 h-72 rounded-full mb-4" />
+                <img src="/assets/avatar.jpeg" alt="Profile Picture" class="w-72 h-72 rounded-full mb-4" />
                 <h1 class="text-4xl font-bold mb-2 dark:text-white mb-3">Gregório Fornetti Azevedo</h1>
                 <p class="text-2xl text-gray-600 dark:text-gray-300 mb-2">{{ $t('home.profession') }}</p>
                 <p class="text-xl mb-6 text-blue-700 dark:text-blue-500 dark:hover:text-blue-400 hover:text-blue-500" v-html="university_md"></p>
@@ -54,6 +56,39 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
                         <li v-for="(interest, index) in $tm('home.interests')" :key="index">{{ interest }}</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h2 class="text-3xl text-gray-700 dark:text-gray-300 text-left mb-6">{{ $t('home.projects_title') }}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <ProjectCard 
+                    v-for="project in $tm('projects')" 
+                    :key="project.title" 
+                    :title="project.title"
+                    :img_path="project.cover"
+                    :img_alt="project.img_alt"
+                    :about_text="project.about_text"
+                    :contributions_text="project.contributions_text"
+                />
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <h2 class="text-3xl text-gray-700 dark:text-gray-300 text-left mb-6">{{ $t('home.papers_title') }}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <PaperCard 
+                    v-for="paper in $tm('papers')" 
+                    :key="paper.title" 
+                    :title="paper.title"
+                    :img_path="paper.cover"
+                    :img_alt="paper.img_alt"
+                    :abstract_text="paper.abstract"
+                    :contributions_text="paper.contributions_text"
+                    :project_url="paper.doi_link"
+                />
             </div>
         </div>
     </div>

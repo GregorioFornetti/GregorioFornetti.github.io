@@ -1,20 +1,20 @@
 import { createI18n } from 'vue-i18n';
 
-import home_ptBR from '../content/pages/pt-BR/home.json';
-import home_en from '../content/pages/en/home.json';
+import home_ptBR from '../../content/pages/pt-BR/home.json';
+import home_en from '../../content/pages/en/home.json';
 
-import header_ptBR from '../content/pages/pt-BR/header.json';
-import header_en from '../content/pages/en/header.json';
+import header_ptBR from '../../content/pages/pt-BR/header.json';
+import header_en from '../../content/pages/en/header.json';
 
-import footer_ptBR from '../content/pages/pt-BR/footer.json';
-import footer_en from '../content/pages/en/footer.json';
+import footer_ptBR from '../../content/pages/pt-BR/footer.json';
+import footer_en from '../../content/pages/en/footer.json';
 
 const projectsTextFiles = import.meta.glob(
-  '/src/content/projects/*/*.json',
+  '/content/projects/*/*.json',
   { eager: true }
 );
 const papersTextFiles = import.meta.glob(
-  '/src/content/papers/*/*.json',
+  '/content/papers/*/*.json',
   { eager: true }
 );
 
@@ -40,12 +40,6 @@ function loadContents(textFiles: Record<string, unknown>, docType: 'projects'|'p
   }))
 }
 
-console.log(loadContents(projectsTextFiles, 'projects', 'en'));
-console.log(loadContents(projectsTextFiles, 'projects', 'pt_br'));
-
-console.log(loadContents(papersTextFiles, 'papers', 'en'));
-console.log(loadContents(papersTextFiles, 'papers', 'pt_br'));
-
 const I18n = createI18n({
   // For use with Vue Composition API
   legacy: false,
@@ -54,12 +48,16 @@ const I18n = createI18n({
     'PT-BR': {
         'home': home_ptBR,
         'header': header_ptBR,
-        'footer': footer_ptBR
+        'footer': footer_ptBR,
+        'projects': loadContents(projectsTextFiles, 'projects', 'pt_br'),
+        'papers': loadContents(papersTextFiles, 'papers', 'pt_br')
     },
     'EN': {
         'home': home_en,
         'header': header_en,
-        'footer': footer_en
+        'footer': footer_en,
+        'projects': loadContents(projectsTextFiles, 'projects', 'en'),
+        'papers': loadContents(papersTextFiles, 'papers', 'en')
     }
   }
 });

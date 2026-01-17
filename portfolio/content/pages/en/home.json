@@ -10,5 +10,7 @@
         "Advanced driver assistance systems (ADAS)",
         "3D object detection and tracking",
         "Incremental recommender systems (multi-armed bandits)"
-    ]
+    ],
+    "projects_title": "Highlighted projects",
+    "papers_title": "Highlighted papers"
 }
