@@ -9,12 +9,16 @@ import header_en from '../content/pages/en/header.json';
 import footer_ptBR from '../content/pages/pt-BR/footer.json';
 import footer_en from '../content/pages/en/footer.json';
 
-function loadContents(locale: 'pt_br' | 'en') {
-  const textFiles = import.meta.glob(
-    '/src/content/projects/*/*.json',
-    { eager: true }
-  )
+const projectsTextFiles = import.meta.glob(
+  '/src/content/projects/*/*.json',
+  { eager: true }
+);
+const papersTextFiles = import.meta.glob(
+  '/src/content/papers/*/*.json',
+  { eager: true }
+);
 
+function loadContents(textFiles: Record<string, unknown>, docType: 'projects'|'papers', locale: 'pt_br'|'en') {
   const projects: Record<string, any> = {}
 
   for (const path in textFiles) {
@@ -32,12 +36,15 @@ function loadContents(locale: 'pt_br' | 'en') {
     slug: name,
     ...data.general,
     ...data[locale],
-    cover: `/content/projects/${name}/cover.png`
+    cover: `/content/${docType}/${name}/cover.png`
   }))
 }
 
-console.log(loadContents('en'));
-console.log(loadContents('pt_br'));
+console.log(loadContents(projectsTextFiles, 'projects', 'en'));
+console.log(loadContents(projectsTextFiles, 'projects', 'pt_br'));
+
+console.log(loadContents(papersTextFiles, 'papers', 'en'));
+console.log(loadContents(papersTextFiles, 'papers', 'pt_br'));
 
 const I18n = createI18n({
   // For use with Vue Composition API
