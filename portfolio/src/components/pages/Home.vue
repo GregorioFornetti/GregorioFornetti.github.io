@@ -65,7 +65,7 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
             <h2 class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-12">{{ $t('home.papers_title') }}</h2>
             <div class="flex flex-row flex-wrap justify-center max-w-7xl gap-6">
                 <PaperCard 
-                    v-for="paper in $tm('papers')" 
+                    v-for="paper in ($tm('papers') as any[]).filter(p => p.highlight)"
                     :key="paper.title" 
                     :title="paper.title"
                     :img_path="paper.cover"
