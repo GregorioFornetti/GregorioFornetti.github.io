@@ -4,7 +4,6 @@ import { marked } from 'marked'
 import { i18n } from '../../plugins/i18n';
 import LattesIcon from '../LattesIcon.vue';
 import PaperCard from '../card/PaperCard.vue';
-import ProjectCard from '../card/ProjectCard.vue';
 
 const university_md = computed(() => marked.parse(i18n.t('home.university')));
 const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
