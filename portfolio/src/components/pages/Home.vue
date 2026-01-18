@@ -62,8 +62,8 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
 
     <div>
         <div>
-            <h2 class="text-3xl text-gray-700 dark:text-gray-300 text-left mb-6">{{ $t('home.projects_title') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 class="text-4xl text-center font-bold text-gray-700 dark:text-gray-300 mb-6">{{ $t('home.projects_title') }}</h2>
+            <div class="flex flex-row flex-wrap justify-center gap-6">
                 <ProjectCard 
                     v-for="project in $tm('projects')" 
                     :key="project.title" 
@@ -77,8 +77,8 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
         </div>
 
         <div class="mt-16">
-            <h2 class="text-3xl text-gray-700 dark:text-gray-300 text-left mb-6">{{ $t('home.papers_title') }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 class="text-4xl text-center font-bold text-gray-700 dark:text-gray-300 mb-6">{{ $t('home.papers_title') }}</h2>
+            <div class="flex flex-row flex-wrap justify-center gap-6">
                 <PaperCard 
                     v-for="paper in $tm('papers')" 
                     :key="paper.title" 
