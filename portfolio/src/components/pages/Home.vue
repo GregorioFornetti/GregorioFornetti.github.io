@@ -11,7 +11,7 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
 </script>
 
 <template>
-    <div class="grid grid-cols-1 xl:grid-cols-2 mt-12 mb-12 gap-32">
+    <div class="grid grid-cols-1 xl:grid-cols-2 mt-40 mb-40 gap-32">
         <!-- Profile information -->
         <div class="xl:flex">
             <div class="ml-auto flex flex-col items-center text-center">
@@ -60,25 +60,10 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
         </div>
     </div>
 
-    <div>
-        <div>
-            <h2 class="text-4xl text-center font-bold text-gray-700 dark:text-gray-300 mb-6">{{ $t('home.projects_title') }}</h2>
-            <div class="flex flex-row flex-wrap justify-center gap-6">
-                <ProjectCard 
-                    v-for="project in $tm('projects')" 
-                    :key="project.title" 
-                    :title="project.title"
-                    :img_path="project.cover"
-                    :img_alt="project.img_alt"
-                    :about_text="project.about_text"
-                    :contributions_text="project.contributions_text"
-                />
-            </div>
-        </div>
-
-        <div class="mt-16">
-            <h2 class="text-4xl text-center font-bold text-gray-700 dark:text-gray-300 mb-6">{{ $t('home.papers_title') }}</h2>
-            <div class="flex flex-row flex-wrap justify-center gap-6">
+    <div class="mb-40">
+        <div class="mt-16 flex flex-col items-center">
+            <h2 class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-12">{{ $t('home.papers_title') }}</h2>
+            <div class="flex flex-row flex-wrap justify-center max-w-7xl gap-6">
                 <PaperCard 
                     v-for="paper in $tm('papers')" 
                     :key="paper.title" 
