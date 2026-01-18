@@ -23,7 +23,7 @@ function closeModal() {
   <div>
     <div
       class="group max-w-sm rounded-lg shadow
-            bg-white dark:bg-gray-800 cursor-pointer
+            bg-white dark:bg-gray-900 cursor-pointer
             transition-all duration-200 ease-out
             hover:-translate-y-1 hover:shadow-lg"
       @click="openModal"
