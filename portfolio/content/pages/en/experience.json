@@ -1,0 +1,45 @@
+{
+    "education_title": "Education",
+    "education": [
+        {
+            "title": "MS Computer Science",
+            "institution": "Federal University of São Carlos (UFSCar)",
+            "location": "Sorocaba, Brazil",
+            "start_date": {
+                "month": "October",
+                "year": "2024"
+            },
+            "summary": "Thesis on background filtering algorithms for 3D object detection. Supervised by Dr. Tiago A. Almeida.",
+            "long_description": ""
+        },
+        {
+            "title": "BS Computer Science",
+            "institution": "Federal University of São Carlos (UFSCar)",
+            "location": "Sorocaba, Brazil",
+            "start_date": {
+                "month": "January",
+                "year": "2020"
+            },
+            "end_date": {
+                "month": "June",
+                "year": "2024"
+            },
+            "summary": "Focused on machine learning, artificial intelligence, computer vision, and data science disciplines. Conducted a undergraduate research funded by CNPQ and FAPESP.",
+            "long_description": ""
+        }
+    ],
+    "internships_title": "Internships",
+    "internships": [
+        {
+            "title": "Germany international interniship",
+            "institution": "Technische Hochschule Ingolstadt (THI)",
+            "location": "Ingolstadt, Germany",
+            "start_date": {
+                "month": "January",
+                "year": "2020"
+            },
+            "summary": "International internship in Ingolstadt, Germany. In this period, I studied autonomous driving and 3D object detection, tracking, and trajectory prediction.",
+            "long_description": ""
+        }
+    ]
+}
