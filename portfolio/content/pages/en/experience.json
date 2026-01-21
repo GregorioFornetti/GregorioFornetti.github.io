@@ -38,8 +38,8 @@
                 "month": "January",
                 "year": "2020"
             },
-            "summary": "International internship in Ingolstadt, Germany. In this period, I studied autonomous driving and 3D object detection, tracking, and trajectory prediction.",
-            "long_description": ""
+            "summary": "International internship in Ingolstadt, Germany. During this period, I studied autonomous driving, 3D object detection, tracking, and trajectory prediction.",
+            "long_description": "International internship in Ingolstadt, Germany. During this period, I studied autonomous driving, 3D object detection, tracking, and trajectory prediction. I labeled point cloud data, evaluated 3D object detection, and applied the VoxelFilterNet to filter out water spray in simulated road spray scenarios. I also helped set up the outdoor experiments, where I calibrated the sensors, set the obstacles, and analyzed some collected data. I provided a specialized 2D object detection model to the research group in their projects."
         }
     ]
 }
