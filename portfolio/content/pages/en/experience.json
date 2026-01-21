@@ -10,7 +10,7 @@
                 "year": "2024"
             },
             "summary": "Thesis on background filtering algorithms for 3D object detection. Supervised by Dr. Tiago A. Almeida.",
-            "long_description": ""
+            "long_description": "Thesis on background filtering algorithms for 3D object detection. Supervised by Dr. Tiago A. Almeida. My main contribution was the proposal of VoxelFilterNet, a novel deep learning architecture for background filtering in LiDAR point clouds. During this period, I was a volunteer researcher in the LaSID RecSys group, where I contributed to the development of recommender systems using incremental learning techniques. I was also a member of the Conecta2030 AI team project, where I implemented 3D object detection and tracking algorithms, which were applied in a digital twin and a real-world environment for predicting dangerous situations. Finally, I conducted an international internship at Technische Hochschule Ingolstadt (THI) in Germany, where I labeled point cloud data, evaluated 3D object detection, and applied the VoxelFilterNet to filter out water spray in simulated road spray scenarios."
         },
         {
             "title": "BS Computer Science",
