@@ -24,8 +24,8 @@
                 "month": "June",
                 "year": "2024"
             },
-            "summary": "Focused on machine learning, artificial intelligence, computer vision, and data science disciplines. Conducted a undergraduate research funded by CNPQ and FAPESP.",
-            "long_description": ""
+            "summary": "During my graduation, I focused on databases, massive data processing, data structures, machine learning, computer vision, and artificial intelligence disciplines, achieving grades above 9 (out of 10) in all of them. My first experience with academic research was as an undergraduate researcher initially funded by CNPQ and then by FAPESP.",
+            "long_description": "During my graduation, I focused on databases, massive data processing, data structures, machine learning, computer vision, and artificial intelligence disciplines, achieving grades above 9 (out of 10) in all of them. My first experience with academic research was as an undergraduate researcher initially funded by CNPQ and then by FAPESP. During the undergraduate research, I became a member of the LaSID RecSys group. I generated embeddings using the RecVae model, used in our weighted similarities method. I implemented some optimized MAB algorithms for recommender systems, which were used in many papers for the group. These modifications originated the GOBRec library. I also elaborated and implemented the experimental protocols for evaluating incremental recommender systems, deciding how the code should be organized, and documenting all the repositories used in our papers. I wrote some sections of the published papers, contributing to the review process. I also led the development of many video games in the Maritacas Gamedev group. For a period, I was one of the coordinators of this entity, orienting beginner students as they developed their first games."
         }
     ],
     "internships_title": "Internships",
