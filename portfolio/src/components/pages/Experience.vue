@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Experience from '../Experience.vue';
+import ExperienceCard from '../ExperienceCard.vue';
 </script>
 
 <template>
     <div class="flex flex-col items-center justify-center mt-32 mb-16">
         <div class="experience-box">
             <h2 class="experience-title">{{  $t('experience.education_title')  }}</h2>
-            <Experience
+            <ExperienceCard
                 v-for="education in ($tm('experience.education') as any[])"
                 :key="education.title + education.institution"
                 :title="education.title"
@@ -21,7 +21,7 @@ import Experience from '../Experience.vue';
 
         <div class="experience-box">
             <h2 class="experience-title">{{  $t('experience.internships_title')  }}</h2>
-            <Experience
+            <ExperienceCard
                 v-for="internship in ($tm('experience.internships') as any[])"
                 :key="internship.title + internship.institution"
                 :title="internship.title"
