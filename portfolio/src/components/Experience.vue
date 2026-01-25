@@ -10,23 +10,22 @@ defineProps<{
   long_description: string
 }>();
 
-console.log('oi')
 </script>
 
 <template>
-  <div class="experience-item">
-    <h3 class="experience-title">{{ title }}</h3>
-    <p class="experience-institution-location">
-      <span class="experience-institution">{{ institution }}</span>
-      <span class="experience-location" v-if="location"> - {{ location }}</span>
+  <div class="mb-4">
+    <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ title }}</h3>
+    <p class="text-xl text-gray-900 dark:text-white">
+      <span>{{ institution }}</span>
+      <span> - {{ location }}</span>
     </p>
-    <p class="experience-dates">
-      <span class="experience-start-date">{{ startDate.month }} {{ startDate.year }}</span>
-      <span class="experience-end-date" v-if="endDate"> - {{ endDate.month }} {{ endDate.year }}</span>
-      <span class="experience-end-date" v-else> - Present</span>
+    <p class="text-lg text-gray-900 dark:text-white">
+      <span>{{ startDate.month }} {{ startDate.year }}</span>
+      <span v-if="endDate"> - {{ endDate.month }} {{ endDate.year }}</span>
+      <span v-else> - Present</span>
     </p>
-    <p class="experience-summary">{{ summary }}</p>
-    <p class="experience-long-description">{{ long_description }}</p>
+    <p>{{ summary }}</p>
+    <p>{{ long_description }}</p>
   </div>
 </template>
 
