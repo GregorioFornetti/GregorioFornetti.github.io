@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 
 defineProps<{
   title: string,
@@ -9,6 +10,8 @@ defineProps<{
   summary: string,
   long_description: string
 }>();
+
+const showingMore = ref(false);
 
 </script>
 
@@ -24,8 +27,24 @@ defineProps<{
       <span v-if="endDate"> - {{ endDate.month }} {{ endDate.year }}</span>
       <span v-else> - Present</span>
     </p>
-    <p>{{ summary }}</p>
-    <p>{{ long_description }}</p>
+    <div v-if="!showingMore">
+      <p class="text-gray-900 dark:text-white">{{ summary }}</p>
+      <button
+        class="text-blue-600 dark:text-blue-400 hover:underline"
+        @click="showingMore = !showingMore"
+      >
+        {{ $t('experience.read_more') }}
+      </button>
+    </div>
+    <div v-else>
+      <p class="text-gray-900 dark:text-white">{{ long_description }}</p>
+      <button
+        class="text-blue-600 dark:text-blue-400 hover:underline"
+        @click="showingMore = !showingMore"
+      >
+        {{ $t('experience.show_less') }}
+      </button>
+    </div>
   </div>
 </template>
 
