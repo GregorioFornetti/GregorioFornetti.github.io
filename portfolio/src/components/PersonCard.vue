@@ -19,10 +19,10 @@ function handleImageError() {
 </script>
 
 <template>
-  <div class="w-64 flex flex-col items-center">
+  <div class="w-60 flex flex-col items-center">
     <a :href="url" target="_blank" rel="noopener noreferrer">
-        <img class="w-48 h-48 rounded-full mb-4" :src="imgSrc" :alt="name" @error="handleImageError" />
+        <img class="w-40 h-40 rounded-full mb-4" :src="imgSrc" :alt="name" @error="handleImageError" />
     </a>
-    <span class="font-bold text-2xl mb-2 text-gray-900 text-center dark:text-white">{{ name }}</span>
+    <span class="font-bold text-xl mb-2 text-gray-900 text-center dark:text-white">{{ name }}</span>
   </div>
 </template>
