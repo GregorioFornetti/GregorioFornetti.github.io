@@ -15,6 +15,9 @@ import publications_en from '../../content/pages/en/publications.json';
 import experience_ptBR from '../../content/pages/pt-BR/experience.json';
 import experience_en from '../../content/pages/en/experience.json';
 
+import people_ptBR from '../../content/pages/pt-BR/people.json';
+import people_en from '../../content/pages/en/people.json';
+
 const projectsTextFiles = import.meta.glob(
   '/content/projects/*/*.json',
   { eager: true }
@@ -57,6 +60,7 @@ const I18n = createI18n({
         'footer': footer_ptBR,
         'publications': publications_ptBR,
         'experience': experience_ptBR,
+        'people': people_ptBR,
         'projects': loadContents(projectsTextFiles, 'projects', 'pt_br'),
         'papers': loadContents(papersTextFiles, 'papers', 'pt_br')
     },
@@ -66,6 +70,7 @@ const I18n = createI18n({
         'footer': footer_en,
         'publications': publications_en,
         'experience': experience_en,
+        'people': people_en,
         'projects': loadContents(projectsTextFiles, 'projects', 'en'),
         'papers': loadContents(papersTextFiles, 'papers', 'en')
     }
