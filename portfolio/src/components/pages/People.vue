@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PersonCard from '../PersonCard.vue';
 import peopleJson from '../../loaders/peopleInfo';
+import ProjectCard from '../card/ProjectCard.vue';
 
 </script>
 
@@ -20,6 +21,22 @@ import peopleJson from '../../loaders/peopleInfo';
         <PersonCard
             v-bind="peopleJson['tiago_almeida']"
         />
+    </div>
+
+    <div class="mt-16 flex flex-col items-center">
+        <h2 class="people-title">{{  $t('people.groups_title')  }}</h2>
+        <div class="flex flex-row flex-wrap justify-center max-w-7xl gap-6">
+            <ProjectCard 
+                v-for="project in ($tm('projects') as any[])"
+                :key="project.title" 
+                :title="project.title"
+                :img_path="project.cover"
+                :img_alt="project.img_alt"
+                :contributions_text="project.contributions_text"
+                :about_text="project.about_text"
+                :project_url="project.project_url"
+            />
+        </div>
     </div>
 </template>
 
