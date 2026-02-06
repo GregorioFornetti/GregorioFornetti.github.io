@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { marked } from 'marked'
 import BaseCard from './BaseCard.vue';
-import PersonCard from '../PersonCard.vue';
+import PersonCardSmall from '../PersonCardSmall.vue';
 import peopleJson from '../../loaders/peopleInfo';
 
 const props = defineProps<{
@@ -47,9 +47,9 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
       <h2 class="modal_heading">{{  $t('cards.my_contributions')  }}</h2>
       <p class="modal_paragraph" v-html="contributionsTextMd">
       </p>
-      <h2 class="modal_heading">{{  $t('cards.group')  }}</h2>
-      <div class="flex flex-row flex-wrap gap-4">
-        <PersonCard
+      <h2 class="text-3xl font-bold mb-1 text-gray-900 dark:text-white text-center mt-16">{{  $t('cards.group')  }}</h2>
+      <div class="flex flex-row flex-wrap justify-center gap-4 mt-10">
+        <PersonCardSmall
           v-for="personKey in projectPeople"
           :key="personKey"
           v-bind="peopleJson[personKey]"
