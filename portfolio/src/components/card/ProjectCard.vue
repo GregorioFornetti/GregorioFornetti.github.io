@@ -37,17 +37,17 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
           rel="noopener noreferrer"
           class="text-blue-600 dark:text-blue-400 hover:underline"
         >
-          Visit Project   
+          {{  $t('cards.visit_project')  }} 
           <font-awesome-icon icon="fa-solid fa-link" />
       </a>
       </div>
-      <h2 class="modal_heading">About the project</h2>
+      <h2 class="modal_heading">{{  $t('cards.about_project')  }}</h2>
       <p class="modal_paragraph" v-html="aboutTextMd">
       </p>
-      <h2 class="modal_heading">My contributions</h2>
+      <h2 class="modal_heading">{{  $t('cards.my_contributions')  }}</h2>
       <p class="modal_paragraph" v-html="contributionsTextMd">
       </p>
-      <h2 class="modal_heading">Group</h2>
+      <h2 class="modal_heading">{{  $t('cards.group')  }}</h2>
 
     </template>
   </BaseCard>

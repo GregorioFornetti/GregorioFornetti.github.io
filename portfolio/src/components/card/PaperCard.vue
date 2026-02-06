@@ -34,14 +34,14 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
           rel="noopener noreferrer"
           class="text-blue-600 dark:text-blue-400 hover:underline"
         >
-          Access paper
+          {{  $t('cards.access_paper')  }}
           <font-awesome-icon icon="fa-solid fa-link" />
       </a>
       </div>
-      <h2 class="modal_heading">Abstract</h2>
+      <h2 class="modal_heading">{{  $t('cards.abstract')  }}</h2>
       <p class="modal_paragraph" v-html="abstractTextMd">
       </p>
-      <h2 class="modal_heading">My contributions</h2>
+      <h2 class="modal_heading">{{  $t('cards.my_contributions')  }}</h2>
       <p class="modal_paragraph" v-html="contributionsTextMd">
       </p>
     </template>

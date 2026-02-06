@@ -34,7 +34,7 @@ import ProjectCard from '../card/ProjectCard.vue';
                 :imgAlt="project.img_alt"
                 :contributionsText="project.contributions_text"
                 :aboutText="project.about_text"
-                :projectUrl="project.project_url"
+                :projectUrl="project.url"
                 :projectPeople="project.people"
             />
         </div>
