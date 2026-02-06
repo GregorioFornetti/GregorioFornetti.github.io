@@ -47,6 +47,8 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
       <h2 class="modal_heading">My contributions</h2>
       <p class="modal_paragraph" v-html="contributionsTextMd">
       </p>
+      <h2 class="modal_heading">Group</h2>
+
     </template>
   </BaseCard>
 </template>

@@ -18,6 +18,9 @@ import experience_en from '../../content/pages/en/experience.json';
 import people_ptBR from '../../content/pages/pt-BR/people.json';
 import people_en from '../../content/pages/en/people.json';
 
+import cards_ptBR from '../../content/pages/pt-BR/cards.json';
+import cards_en from '../../content/pages/en/cards.json';
+
 const projectsTextFiles = import.meta.glob(
   '/content/projects/*/*.json',
   { eager: true }
@@ -61,6 +64,7 @@ const I18n = createI18n({
         'publications': publications_ptBR,
         'experience': experience_ptBR,
         'people': people_ptBR,
+        'cards': cards_ptBR,
         'projects': loadContents(projectsTextFiles, 'projects', 'pt_br'),
         'papers': loadContents(papersTextFiles, 'papers', 'pt_br')
     },
@@ -71,6 +75,7 @@ const I18n = createI18n({
         'publications': publications_en,
         'experience': experience_en,
         'people': people_en,
+        'cards': cards_en,
         'projects': loadContents(projectsTextFiles, 'projects', 'en'),
         'papers': loadContents(papersTextFiles, 'papers', 'en')
     }
