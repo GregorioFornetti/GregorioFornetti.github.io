@@ -30,11 +30,12 @@ import ProjectCard from '../card/ProjectCard.vue';
                 v-for="project in ($tm('projects') as any[])"
                 :key="project.title" 
                 :title="project.title"
-                :img_path="project.cover"
-                :img_alt="project.img_alt"
-                :contributions_text="project.contributions_text"
-                :about_text="project.about_text"
-                :project_url="project.project_url"
+                :imgPath="project.cover"
+                :imgAlt="project.img_alt"
+                :contributionsText="project.contributions_text"
+                :aboutText="project.about_text"
+                :projectUrl="project.project_url"
+                :projectPeople="project.people"
             />
         </div>
     </div>

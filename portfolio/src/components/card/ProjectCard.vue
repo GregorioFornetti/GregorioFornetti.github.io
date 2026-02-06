@@ -2,34 +2,37 @@
 import { computed } from 'vue'
 import { marked } from 'marked'
 import BaseCard from './BaseCard.vue';
+import PersonCard from '../PersonCard.vue';
+import peopleJson from '../../loaders/peopleInfo';
 
 const props = defineProps<{
   title: string,
-  img_path: string,
-  img_alt: string,
-  about_text: string,
-  contributions_text: string,
-  project_url?: string
+  imgPath: string,
+  imgAlt: string,
+  aboutText: string,
+  contributionsText: string,
+  projectPeople: string[],
+  projectUrl?: string
 }>();
 
-const about_text_md = computed(() => marked.parse(props.about_text));
-const contributions_text_md = computed(() => marked.parse(props.contributions_text));
+const aboutTextMd = computed(() => marked.parse(props.aboutText));
+const contributionsTextMd = computed(() => marked.parse(props.contributionsText));
 </script>
 
 <template>
   <BaseCard
     :title=title
-    :img_path="img_path"
-    :img_alt="img_alt"
+    :imgPath="imgPath"
+    :imgAlt="imgAlt"
   >
     <template #card-body>
-      <p v-html="about_text_md"></p>
+      <p v-html="aboutTextMd"></p>
     </template>
     <template #modal-body>
       <div class="mb-4">
         <a
-          v-if="project_url"
-          :href="project_url"
+          v-if="projectUrl"
+          :href="projectUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="text-blue-600 dark:text-blue-400 hover:underline"
@@ -39,10 +42,10 @@ const contributions_text_md = computed(() => marked.parse(props.contributions_te
       </a>
       </div>
       <h2 class="modal_heading">About the project</h2>
-      <p class="modal_paragraph" v-html="about_text_md">
+      <p class="modal_paragraph" v-html="aboutTextMd">
       </p>
       <h2 class="modal_heading">My contributions</h2>
-      <p class="modal_paragraph" v-html="contributions_text_md">
+      <p class="modal_paragraph" v-html="contributionsTextMd">
       </p>
     </template>
   </BaseCard>

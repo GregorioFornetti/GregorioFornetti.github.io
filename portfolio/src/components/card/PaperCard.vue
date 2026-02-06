@@ -5,31 +5,31 @@ import BaseCard from './BaseCard.vue';
 
 const props = defineProps<{
   title: string,
-  img_path: string,
-  img_alt: string,
-  abstract_text: string,
-  contributions_text: string,
-  project_url?: string
+  imgPath: string,
+  imgAlt: string,
+  abstractText: string,
+  contributionsText: string,
+  projectUrl?: string
 }>();
 
-const abstract_text_md = computed(() => marked.parse(props.abstract_text));
-const contributions_text_md = computed(() => marked.parse(props.contributions_text));
+const abstractTextMd = computed(() => marked.parse(props.abstractText));
+const contributionsTextMd = computed(() => marked.parse(props.contributionsText));
 </script>
 
 <template>
   <BaseCard
     :title=title
-    :img_path="img_path"
-    :img_alt="img_alt"
+    :imgPath="imgPath"
+    :imgAlt="imgAlt"
   >
     <template #card-body>
-      <p v-html="abstract_text_md"></p>
+      <p v-html="abstractTextMd"></p>
     </template>
     <template #modal-body>
       <div class="mb-4">
         <a
-          v-if="project_url"
-          :href="project_url"
+          v-if="projectUrl"
+          :href="projectUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="text-blue-600 dark:text-blue-400 hover:underline"
@@ -39,10 +39,10 @@ const contributions_text_md = computed(() => marked.parse(props.contributions_te
       </a>
       </div>
       <h2 class="modal_heading">Abstract</h2>
-      <p class="modal_paragraph" v-html="abstract_text_md">
+      <p class="modal_paragraph" v-html="abstractTextMd">
       </p>
       <h2 class="modal_heading">My contributions</h2>
-      <p class="modal_paragraph" v-html="contributions_text_md">
+      <p class="modal_paragraph" v-html="contributionsTextMd">
       </p>
     </template>
   </BaseCard>

@@ -4,8 +4,8 @@ import BaseModal from '../modal/BaseModal.vue';
 
 defineProps<{
   title: string,
-  img_path: string,
-  img_alt: string
+  imgPath: string,
+  imgAlt: string
 }>();
 
 const showModal = ref(false)
@@ -33,8 +33,8 @@ function closeModal() {
           class="w-full h-full object-cover
                 transition-transform duration-300 ease-out
                 group-hover:scale-105"
-          :src="img_path"
-          :alt="img_alt"
+          :src="imgPath"
+          :alt="imgAlt"
         />
       </div>
       <div class="p-5">
@@ -67,8 +67,8 @@ function closeModal() {
     >
       <template #body>
         <img 
-          :src="img_path" 
-          :alt="img_alt" 
+          :src="imgPath" 
+          :alt="imgAlt" 
           class="w-full h-auto mb-4 rounded"
         />
         <slot name="modal-body" />
