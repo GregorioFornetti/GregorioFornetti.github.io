@@ -14,7 +14,7 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
         <!-- Profile information -->
         <div class="xl:flex">
             <div class="ml-auto flex flex-col items-center text-center">
-                <img src="/assets/avatar.jpeg" alt="Profile Picture" class="w-72 h-72 rounded-full mb-4" />
+                <img src="/assets/avatar.jpg" alt="Profile Picture" class="w-72 h-72 rounded-full mb-4" />
                 <h1 class="text-4xl font-bold mb-2 dark:text-white mb-3">Gregório Fornetti Azevedo</h1>
                 <p class="text-2xl text-gray-600 dark:text-gray-300 mb-2">{{ $t('home.profession') }}</p>
                 <p class="text-xl mb-6 text-blue-700 dark:text-blue-500 dark:hover:text-blue-400 hover:text-blue-500" v-html="university_md"></p>
