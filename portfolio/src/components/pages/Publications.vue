@@ -11,11 +11,11 @@
                     v-for="paper in ($tm('papers') as any[]).filter(p => p.highlight)"
                     :key="paper.title" 
                     :title="paper.title"
-                    :img_path="paper.cover"
-                    :img_alt="paper.img_alt"
-                    :abstract_text="paper.abstract"
-                    :contributions_text="paper.contributions_text"
-                    :project_url="paper.doi_link"
+                    :imgPath="paper.cover"
+                    :imgAlt="paper.img_alt"
+                    :abstractText="paper.abstract"
+                    :contributionsText="paper.contributions_text"
+                    :projectUrl="paper.url"
                 />
             </div>
         </div>
