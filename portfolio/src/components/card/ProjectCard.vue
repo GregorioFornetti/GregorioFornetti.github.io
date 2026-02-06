@@ -48,7 +48,13 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
       <p class="modal_paragraph" v-html="contributionsTextMd">
       </p>
       <h2 class="modal_heading">{{  $t('cards.group')  }}</h2>
-
+      <div class="flex flex-row flex-wrap gap-4">
+        <PersonCard
+          v-for="personKey in projectPeople"
+          :key="personKey"
+          v-bind="peopleJson[personKey]"
+        />
+      </div>
     </template>
   </BaseCard>
 </template>
