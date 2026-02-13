@@ -69,7 +69,7 @@ function closeModal() {
         <img 
           :src="imgPath" 
           :alt="imgAlt" 
-          class="w-full h-auto mb-4 rounded"
+          class="w-full h-96 object-cover rounded mb-4"
         />
         <slot name="modal-body" />
       </template>
