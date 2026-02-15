@@ -1,44 +1,48 @@
 {
-    "education_title": "Education",
+    "education_title": "Formação acadêmica",
     "education": [
         {
-            "title": "MS Computer Science",
-            "institution": "Federal University of São Carlos (UFSCar)",
-            "location": "Sorocaba, Brazil",
+            "title": "Mestrado em Ciência da Computação",
+            "institution": "Universidade Federal de São Carlos (UFSCar)",
+            "location": "Sorocaba, Brasil",
             "start_date": {
-                "month": "October",
+                "month": "Outubro",
                 "year": "2024"
             },
             "summary": "Trabalho sobre algoritmos de filtragem de *background* para detecção de objetos 3D. Orientado pelo Dr. Tiago A. Almeida.",
             "long_description": "Trabalho sobre algoritmos de filtragem de *background* para detecção de objetos 3D. Orientado pelo Dr. Tiago A. Almeida. Minha principal contribuição foi a proposta do VoxelFilterNet, uma nova arquitetura de aprendizado profundo para filtragem de *background* em nuvens de pontos LiDAR. Durante esse período, fui pesquisador voluntário no grupo LaSID RecSys, onde contribuí para o desenvolvimento de sistemas de recomendação utilizando técnicas de aprendizado incremental. Também fui membro do time inteligência artificial (IA) do projeto Conecta2030, onde implementei algoritmos de detecção e rastreamento de objetos 3D, aplicados em um gêmeo digital e em um ambiente real para prever situações de perigo. Por fim, realizei um estágio internacional na Technische Hochschule Ingolstadt (THI), na Alemanha, onde rotulei dados de nuvens de pontos, avaliei a detecção de objetos 3D e apliquei o VoxelFilterNet para filtrar spray de água (*road spray*) em cenários simulados físicos."
         },
         {
-            "title": "BS Computer Science",
-            "institution": "Federal University of São Carlos (UFSCar)",
-            "location": "Sorocaba, Brazil",
+            "title": "Bacharelado em Ciência da Computação",
+            "institution": "Universidade Federal de São Carlos (UFSCar)",
+            "location": "Sorocaba, Brasil",
             "start_date": {
-                "month": "January",
+                "month": "Janeiro",
                 "year": "2020"
             },
             "end_date": {
-                "month": "June",
+                "month": "Junho",
                 "year": "2024"
             },
             "summary": "Durante minha graduação, concentrei-me nas matérias de bancos de dados, processamento massivo de dados, estruturas de dados, aprendizado de máquina, visão computacional e inteligência artificial, obtendo notas acima de 9 (em 10) em todas as disciplinas. Minha primeira experiência com pesquisa acadêmica foi em uma iniciação científica, inicialmente financiado pelo CNPq e posteriormente pela FAPESP.",
             "long_description": "Durante minha graduação, concentrei-me nas matérias de bancos de dados, processamento massivo de dados, estruturas de dados, aprendizado de máquina, visão computacional e inteligência artificial, obtendo notas acima de 9 (em 10) em todas as disciplinas. Minha primeira experiência com pesquisa acadêmica foi em uma iniciação científica, inicialmente financiado pelo CNPq e posteriormente pela FAPESP. Durante a minha inciciação científica, tornei-me membro do grupo LaSID RecSys. Gerei embeddings usando o modelo RecVae, empregado em nosso método proposto *weighted sims*. Implementei alguns algoritmos MAB otimizados para sistemas de recomendação, que foram utilizados em diversos artigos do grupo. Essas modificações deram origem à [biblioteca GOBRec](https://github.com/UFSCar-LaSID/gobrec). Também elaborei e implementei os protocolos experimentais para avaliação de sistemas de recomendação incrementais, definindo a organização do código e documentando todos os repositórios utilizados em nossos artigos. Escrevi algumas seções dos artigos publicados, contribuindo para o processo de revisão. Além disso, liderei o desenvolvimento de diversos jogos eletrônicos no grupo Maritacas Gamedev. Durante um período, fui um dos coordenadores dessa entidade, orientando alunos iniciantes no desenvolvimento de seus primeiros jogos."
         }
     ],
-    "internships_title": "Internships",
+    "internships_title": "Intercâmbios",
     "internships": [
         {
-            "title": "Germany international interniship",
+            "title": "Intercâmbio internacional para Alemanha",
             "institution": "Technische Hochschule Ingolstadt (THI)",
-            "location": "Ingolstadt, Germany",
+            "location": "Ingolstadt, Alemanha",
             "start_date": {
-                "month": "January",
-                "year": "2020"
+                "month": "Agosto",
+                "year": "2025"
             },
-            "summary": "International internship in Ingolstadt, Germany. During this period, I studied autonomous driving, 3D object detection, tracking, and trajectory prediction.",
+            "end_date": {
+                "month": "Julho",
+                "year": "2026"
+            },
+            "summary": "Estágio internacional em Ingolstadt, Alemanha. Durante esse período, estudei carros autônomos, detecção de objetos 3D, rastreamento e previsão de trajetória.",
             "long_description": "Estágio internacional em Ingolstadt, Alemanha. Durante esse período, estudei carros autônomos, detecção de objetos 3D, rastreamento e previsão de trajetória. Rotulei dados de nuvem de pontos, avaliei a detecção de objetos 3D e apliquei o VoxelFilterNet para filtrar *spray* de água em simulações físicas. Também auxiliei na montagem de experimentos externos, onde ajudei a calibrar os sensores, posicionar os obstáculos e analisar alguns dados coletados. Também disponibilizei um modelo especializado de detecção de objetos 2D para o grupo de pesquisa em seus projetos."
         }
     ],
