@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import Header from './components/Header.vue';
 import { i18n } from './plugins/i18n';
-import { ref } from 'vue';
-import Home from './components/pages/Home.vue'
-import Experience from './components/pages/Experience.vue'
-import Publications from './components/pages/Publications.vue'
-import People from './components/pages/People.vue'
 import Footer from './components/Footer.vue';
 
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -20,19 +15,14 @@ if (localStorage.locale) {
   localStorage.locale = i18n.locale.value
 }
 
-const selectedOption = ref<'home'|'experience'|'publications'|'people'>('home')
-
 </script>
 
 <template>
   <div class="main-container">
-    <Header v-model="selectedOption" />
+    <Header />
 
     <div class="pt-20 px-10">
-      <Home v-if="selectedOption === 'home'" />
-      <Experience v-else-if="selectedOption === 'experience'" />
-      <Publications v-else-if="selectedOption === 'publications'" />
-      <People v-else-if="selectedOption === 'people'" />
+      <RouterView />
     </div>
 
     <Footer />
