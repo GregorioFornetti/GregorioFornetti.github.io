@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { i18n } from '../plugins/i18n'
+import { RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const isDark = ref(localStorage.theme === 'dark')
 const menuOpen = ref(false)
@@ -19,11 +23,6 @@ function languageChanged() {
   localStorage.setItem('locale', i18n.locale.value)
 }
 
-const selectedSection = defineModel()
-
-function defineSelectedSection(section: string) {
-  selectedSection.value = section
-}
 </script>
 
 <template>
@@ -36,18 +35,18 @@ function defineSelectedSection(section: string) {
         </div>
 
         <nav class="hidden md:flex space-x-8 text-sm font-medium">
-          <a class="nav-link" @click="defineSelectedSection('home')" :class="{ active: selectedSection === 'home' }" >
+          <RouterLink to="/" class="nav-link">
             {{ $t('header.home') }}
-          </a>
-          <a class="nav-link" @click="defineSelectedSection('experience')" :class="{ active: selectedSection === 'experience' }">
+          </RouterLink>
+          <RouterLink to="/experience" class="nav-link">
             {{ $t('header.experience') }}
-          </a>
-          <a class="nav-link" @click="defineSelectedSection('publications')" :class="{ active: selectedSection === 'publications' }">
+          </RouterLink>
+          <RouterLink to="/publications" class="nav-link">
             {{ $t('header.publications') }}
-          </a>
-          <a class="nav-link" @click="defineSelectedSection('people')" :class="{ active: selectedSection === 'people' }">
+          </RouterLink>
+          <RouterLink to="/people" class="nav-link">
             {{ $t('header.people') }}
-          </a>
+          </RouterLink>
         </nav>
 
         <div class="hidden md:flex items-center space-x-4 w-1/4 justify-end">
@@ -75,18 +74,18 @@ function defineSelectedSection(section: string) {
     <!-- Mobile menu -->
     <div v-if="menuOpen" class="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-4">
-          <a class="nav-link" @click="() => {defineSelectedSection('home'); toggleMenu()}" :class="{ active: selectedSection === 'home' }" >
-            {{ $t('header.home') }}
-          </a>
-          <a class="nav-link" @click="() => {defineSelectedSection('experience'); toggleMenu()}" :class="{ active: selectedSection === 'experience' }">
-            {{ $t('header.experience') }}
-          </a>
-          <a class="nav-link" @click="() => {defineSelectedSection('publications'); toggleMenu()}" :class="{ active: selectedSection === 'publications' }">
-            {{ $t('header.publications') }}
-          </a>
-          <a class="nav-link" @click="() => {defineSelectedSection('people'); toggleMenu()}" :class="{ active: selectedSection === 'people' }">
-            {{ $t('header.people') }}
-          </a>
+        <RouterLink to="/" class="nav-link">
+          {{ $t('header.home') }}
+        </RouterLink>
+        <RouterLink to="/experience" class="nav-link">
+          {{ $t('header.experience') }}
+        </RouterLink>
+        <RouterLink to="/publications" class="nav-link">
+          {{ $t('header.publications') }}
+        </RouterLink>
+        <RouterLink to="/people" class="nav-link">
+          {{ $t('header.people') }}
+        </RouterLink>
 
         <div class="flex items-center justify-between pt-4">
           <button @click="toggleTheme" class="theme_toggle">
@@ -113,6 +112,10 @@ function defineSelectedSection(section: string) {
          hover:text-blue-600 dark:hover:text-blue-400
          transition-colors cursor-pointer
          text-lg;
+}
+
+.router-link-exact-active {
+  @apply font-bold text-blue-600 dark:text-blue-400;
 }
 
 .nav-link.active {
