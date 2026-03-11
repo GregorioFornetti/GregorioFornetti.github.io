@@ -1,20 +1,25 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import BaseModal from '../modal/BaseModal.vue';
+import { router } from '../../plugins/router';
 
-defineProps<{
+const props = defineProps<{
   title: string,
   imgPath: string,
-  imgAlt: string
+  imgAlt: string,
+  modalQueryId: string,
+  modalQueryType: string
 }>();
 
 const showModal = ref(false)
 
 function openModal() {
+  router.push({ query: { modalType: props.modalQueryType, modalId: props.modalQueryId } })
   showModal.value = true
 }
 
 function closeModal() {
+  router.push({ query: { modalType: undefined, modalId: undefined } })
   showModal.value = false
 }
 </script>

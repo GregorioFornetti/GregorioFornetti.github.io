@@ -28,6 +28,7 @@ import ProjectCard from '../card/ProjectCard.vue';
         <div class="flex flex-row flex-wrap justify-center max-w-7xl gap-6">
             <ProjectCard 
                 v-for="project in ($tm('projects') as any[])"
+                :id="project.slug"
                 :key="project.title" 
                 :title="project.title"
                 :imgPath="project.cover"

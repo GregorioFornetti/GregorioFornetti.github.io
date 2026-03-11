@@ -65,6 +65,7 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
             <div class="flex flex-row flex-wrap justify-center max-w-7xl gap-6">
                 <PaperCard 
                     v-for="paper in ($tm('papers') as any[]).filter(p => p.highlight)"
+                    :id="paper.slug"
                     :key="paper.title" 
                     :title="paper.title"
                     :imgPath="paper.cover"

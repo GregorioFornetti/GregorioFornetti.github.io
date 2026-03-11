@@ -4,6 +4,7 @@ import { marked } from 'marked'
 import BaseCard from './BaseCard.vue';
 
 const props = defineProps<{
+  id: string,
   title: string,
   imgPath: string,
   imgAlt: string,
@@ -21,6 +22,8 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
     :title=title
     :imgPath="imgPath"
     :imgAlt="imgAlt"
+    :modalQueryId="id"
+    modalQueryType="paper"
   >
     <template #card-body>
       <p v-html="abstractTextMd"></p>

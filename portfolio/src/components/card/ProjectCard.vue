@@ -6,6 +6,7 @@ import PersonCardSmall from '../PersonCardSmall.vue';
 import peopleJson from '../../loaders/peopleInfo';
 
 const props = defineProps<{
+  id: string,
   title: string,
   imgPath: string,
   imgAlt: string,
@@ -24,6 +25,8 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
     :title=title
     :imgPath="imgPath"
     :imgAlt="imgAlt"
+    :modalQueryId="id"
+    modalQueryType="project"
   >
     <template #card-body>
       <p v-html="aboutTextMd"></p>
