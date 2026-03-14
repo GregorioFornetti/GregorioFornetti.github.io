@@ -10,7 +10,8 @@ const props = defineProps<{
   imgAlt: string,
   abstractText: string,
   contributionsText: string,
-  projectUrl?: string
+  projectUrl?: string,
+  alreadyOpen?: boolean
 }>();
 
 const abstractTextMd = computed(() => marked.parse(props.abstractText));
@@ -23,6 +24,7 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
     :imgPath="imgPath"
     :imgAlt="imgAlt"
     :modalQueryId="id"
+    :alreadyOpen="alreadyOpen"
     modalQueryType="paper"
   >
     <template #card-body>
