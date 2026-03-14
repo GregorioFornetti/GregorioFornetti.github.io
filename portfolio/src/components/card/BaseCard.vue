@@ -8,10 +8,15 @@ const props = defineProps<{
   imgPath: string,
   imgAlt: string,
   modalQueryId: string,
-  modalQueryType: string
+  modalQueryType: string,
+  alreadyOpen?: boolean
 }>();
 
 const showModal = ref(false)
+
+if (props.alreadyOpen) {
+  showModal.value = true
+}
 
 function openModal() {
   router.push({ query: { modalType: props.modalQueryType, modalId: props.modalQueryId } })
