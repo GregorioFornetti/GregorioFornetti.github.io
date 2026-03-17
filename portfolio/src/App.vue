@@ -20,22 +20,58 @@ if (localStorage.locale) {
   localStorage.locale = i18n.locale.value
 }
 
+let placeHolderInfo = {
+  slug: 'a',
+  title: 'a',
+  cover: 'a',
+  img_alt: 'a',
+  abstract: 'a',
+  contributions_text: 'a',
+  url: 'a',
+  about_text: 'a',
+  people: []
+}
 let modalType = ref<string|undefined>(undefined)
-let info = ref<any>(undefined)
+let info = ref<any>(placeHolderInfo)
+let modalPaperOpen = ref(false)
+let modalProjectOpen = ref(false)
 
-router.isReady().then(() => {
 
-
+function updateModal() {
   modalType.value = router.currentRoute.value.query.modalType as string
   let modalId = router.currentRoute.value.query.modalId as string
 
   if (modalType.value === 'paper') {
-    info.value = (i18n.tm('papers') as any[]).find(p => p.slug === modalId)
-  } else if (modalType.value === 'project') {
-    info.value = (i18n.tm('projects') as any[]).find(p => p.slug === modalId)
-  }
+    const foundPaper = (i18n.tm('papers') as any[]).find(p => p.slug === modalId)
+    foundPaper.about_text = ''
+    info.value = foundPaper
 
-  console.log(info.value)
+    console.log('opening paper')
+    modalPaperOpen.value = true
+    modalProjectOpen.value = false
+  } else if (modalType.value === 'project') {
+    const foundProject = (i18n.tm('projects') as any[]).find(p => p.slug === modalId)
+    foundProject.abstract = ''
+    info.value = foundProject
+
+    console.log('opening project')
+    modalProjectOpen.value = true
+    modalPaperOpen.value = false
+  } else {
+    info.value = placeHolderInfo
+
+    console.log('closing modals')
+    modalPaperOpen.value = false
+    modalProjectOpen.value = false
+  }
+}
+
+router.isReady().then(() => {
+  updateModal()
+
+  router.afterEach(() => {
+    updateModal()
+  })
 })
 </script>
 
@@ -49,7 +85,6 @@ router.isReady().then(() => {
 
     <div class="hidden">
       <PaperCard 
-        v-if="modalType === 'paper' && info"
         :id="info.slug"
         :title="info.title"
         :imgPath="info.cover"
@@ -57,11 +92,11 @@ router.isReady().then(() => {
         :abstractText="info.abstract"
         :contributionsText="info.contributions_text"
         :projectUrl="info.url"
-        alreadyOpen
+        :alreadyOpen="modalPaperOpen"
+        displayModal
       />
 
       <ProjectCard 
-        v-if="modalType === 'project' && info"
         :id="info.slug"
         :title="info.title"
         :imgPath="info.cover"
@@ -70,7 +105,8 @@ router.isReady().then(() => {
         :aboutText="info.about_text"
         :projectUrl="info.url"
         :projectPeople="info.people"
-        alreadyOpen
+        :alreadyOpen="modalProjectOpen"
+        displayModal
       />
     </div>
 

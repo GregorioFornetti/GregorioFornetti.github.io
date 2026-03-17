@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import BaseModal from '../modal/BaseModal.vue';
 import { router } from '../../plugins/router';
 
@@ -9,14 +9,18 @@ const props = defineProps<{
   imgAlt: string,
   modalQueryId: string,
   modalQueryType: string,
-  alreadyOpen?: boolean
+  alreadyOpen?: boolean,
+  displayModal?: boolean
 }>();
 
-const showModal = ref(false)
+watch(
+  () => props.alreadyOpen,
+  (newVal) => {
+    showModal.value = newVal;
+  }
+);
 
-if (props.alreadyOpen) {
-  showModal.value = true
-}
+const showModal = ref(props.alreadyOpen)
 
 function openModal() {
   router.push({ query: { modalType: props.modalQueryType, modalId: props.modalQueryId } })
@@ -71,6 +75,7 @@ function closeModal() {
     </div>
 
     <BaseModal
+      v-if="displayModal"
       :title="title"
       :show="showModal"
       :close-modal="closeModal"
