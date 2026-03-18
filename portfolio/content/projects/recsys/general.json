@@ -6,5 +6,9 @@
         "rafael_tofoli",
         "pietro_presti",
         "tiago_almeida"
+    ],
+    "publications": [
+        "weighted_sims",
+        "recsys_mabs"
     ]
 }
