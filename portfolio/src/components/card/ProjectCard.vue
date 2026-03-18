@@ -4,6 +4,7 @@ import { marked } from 'marked'
 import BaseCard from './BaseCard.vue';
 import PersonCardSmall from '../PersonCardSmall.vue';
 import peopleJson from '../../loaders/peopleInfo';
+import PaperCard from './PaperCard.vue';
 
 const props = defineProps<{
   id: string,
@@ -13,6 +14,7 @@ const props = defineProps<{
   aboutText: string,
   contributionsText: string,
   projectPeople: string[],
+  projectPublications: string[],
   projectUrl?: string,
   alreadyOpen?: boolean
 }>();
@@ -58,6 +60,20 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
           v-for="personKey in projectPeople"
           :key="personKey"
           v-bind="peopleJson[personKey]"
+        />
+      </div>
+      <h2 class="text-3xl font-bold mb-1 text-gray-900 dark:text-white text-center mt-16">{{  $t('cards.publications')  }}</h2>
+      <div class="flex flex-row flex-wrap justify-center gap-4 mt-10">
+        <PaperCard 
+            v-for="paper in ($tm('papers') as any[]).filter(p => props.projectPublications.includes(p.slug))"
+            :id="paper.slug"
+            :key="paper.title" 
+            :title="paper.title"
+            :imgPath="paper.cover"
+            :imgAlt="paper.img_alt"
+            :abstractText="paper.abstract"
+            :contributionsText="paper.contributions_text"
+            :projectUrl="paper.url"
         />
       </div>
     </template>

@@ -29,7 +29,8 @@ let placeHolderInfo = {
   contributions_text: 'a',
   url: 'a',
   about_text: 'a',
-  people: []
+  people: [],
+  publications: []
 }
 let modalType = ref<string|undefined>(undefined)
 let info = ref<any>(placeHolderInfo)
@@ -44,6 +45,8 @@ function updateModal() {
   if (modalType.value === 'paper') {
     const foundPaper = (i18n.tm('papers') as any[]).find(p => p.slug === modalId)
     foundPaper.about_text = ''
+    foundPaper.people = []
+    foundPaper.publications = []
     info.value = foundPaper
 
     console.log('opening paper')
@@ -105,6 +108,7 @@ router.isReady().then(() => {
         :aboutText="info.about_text"
         :projectUrl="info.url"
         :projectPeople="info.people"
+        :projectPublications="info.publications"
         :alreadyOpen="modalProjectOpen"
         displayModal
       />
