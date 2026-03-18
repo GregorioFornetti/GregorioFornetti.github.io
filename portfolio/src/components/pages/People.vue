@@ -37,7 +37,7 @@ import ProjectCard from '../card/ProjectCard.vue';
                 :aboutText="project.about_text"
                 :projectUrl="project.url"
                 :projectPeople="project.people"
-                :projectPapers="project.publications"
+                :projectPublications="project.publications"
             />
         </div>
     </div>
