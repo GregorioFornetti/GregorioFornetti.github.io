@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { i18n } from '../plugins/i18n'
 import { RouterLink } from 'vue-router'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
 
 const isDark = ref(localStorage.theme === 'dark')
 const menuOpen = ref(false)
