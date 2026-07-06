@@ -28,6 +28,14 @@
                     <LattesIcon />
                 </a>
             </div>
+            <p class="mt-5">
+                {{ $t('footer.last_modification') }}
+            </p>
+            <p class="mt-2">
+                <a href="https://github.com/GregorioFornetti/GregorioFornetti.github.io/blob/main/older_versions.md" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">
+                    {{ $t('footer.older_versions') }}
+                </a>
+            </p>
         </div>
     </footer>
 </template>

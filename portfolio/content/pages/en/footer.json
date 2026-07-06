@@ -1,3 +1,5 @@
 {
-    "project_text": "The source code of this portfolio is available on {githubLink}.<br>Feel free to use it as a template for your own portfolio!"
+    "project_text": "The source code of this portfolio is available on {githubLink}.<br>Feel free to use it as a template for your own portfolio!",
+    "last_modification": "Last modification: April 2026",
+    "older_versions": "Access older versions"
 }
