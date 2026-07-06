@@ -31,7 +31,7 @@
     "internships_title": "Internships",
     "internships": [
         {
-            "title": "Germany international interniship",
+            "title": "Germany international research internship",
             "institution": "Technische Hochschule Ingolstadt (THI)",
             "location": "Ingolstadt, Germany",
             "start_date": {
@@ -42,8 +42,8 @@
                 "month": "July",
                 "year": "2026"
             },
-            "summary": "International internship in Ingolstadt, Germany. During this period, I studied autonomous driving, 3D object detection, tracking, and trajectory prediction.",
-            "long_description": "International internship in Ingolstadt, Germany. During this period, I studied autonomous driving, 3D object detection, tracking, and trajectory prediction. I labeled point cloud data, evaluated 3D object detection, and applied the VoxelFilterNet to filter out water spray in simulated road spray scenarios. I also helped set up the outdoor experiments, where I calibrated the sensors, set the obstacles, and analyzed some collected data. I provided a specialized 2D object detection model to the research group, helping them to better detect road objects, such as cars and pedestrians."
+            "summary": "International research internship in Ingolstadt, Germany. I conducted research on the impact of water spray on LiDAR data quality and 3D object detection performance.",
+            "long_description": "International research internship in Ingolstadt, Germany. I conducted research on the impact of water spray on LiDAR data quality and 3D object detection performance. Developed a semi-automated annotation pipeline to efficiently label a water spray dataset. Investigated the effects of water spray on LiDAR point clouds by analyzing changes in target point density and return intensity. Evaluated the robustness of multiple 3D object detection algorithms under adverse weather conditions, performing both qualitative and quantitative comparisons of voxel-based and pillar-based detection methods."
         }
     ],
     "read_more": "Read more",

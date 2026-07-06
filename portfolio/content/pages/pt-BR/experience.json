@@ -42,8 +42,8 @@
                 "month": "Julho",
                 "year": "2026"
             },
-            "summary": "Estágio internacional em Ingolstadt, Alemanha. Durante esse período, estudei carros autônomos, detecção de objetos 3D, rastreamento e previsão de trajetória.",
-            "long_description": "Estágio internacional em Ingolstadt, Alemanha. Durante esse período, estudei carros autônomos, detecção de objetos 3D, rastreamento e previsão de trajetória. Rotulei dados de nuvem de pontos, avaliei a detecção de objetos 3D e apliquei o VoxelFilterNet para filtrar *spray* de água em simulações físicas. Também auxiliei na montagem de experimentos externos, onde ajudei a calibrar os sensores, posicionar os obstáculos e analisar alguns dados coletados. Também disponibilizei um modelo especializado de detecção de objetos 2D para o grupo de pesquisa em seus projetos."
+            "summary": "Intercâmbio de pesquisa internacional em Ingolstadt, Alemanha. Realizei pesquisas sobre o impacto do spray de água na qualidade dos dados de LiDAR e no desempenho da detecção de objetos em 3D.",
+            "long_description": "Intercâmbio de pesquisa internacional em Ingolstadt, Alemanha. Realizei pesquisas sobre o impacto do spray de água na qualidade dos dados de LiDAR e no desempenho da detecção de objetos em 3D. Desenvolvi um *pipeline* de anotação semi automatizado para rotular um conjunto de dados contendo spray de água. Investiguei os efeitos do spray de água em nuvens de pontos de LiDAR, analisando variações na densidade de pontos do objeto alvo e na intensidade do retorno. Avaliei a robustez de diversos algoritmos de detecção de objetos em 3D sob condições climáticas adversas, realizando comparações qualitativas e quantitativas entre métodos de detecção baseados em voxels e em pilares (*pillars*)."
         }
     ],
     "read_more": "Ler mais",
