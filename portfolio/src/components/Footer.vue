@@ -35,6 +35,7 @@
                 <a href="https://github.com/GregorioFornetti/GregorioFornetti.github.io/blob/main/older_versions.md" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">
                     {{ $t('footer.older_versions') }}
                 </a>
+                Testando testando testando
             </p>
         </div>
     </footer>
