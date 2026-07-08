@@ -9,6 +9,8 @@
     ],
     "publications": [
         "weighted_sims",
-        "recsys_mabs"
+        "recsys_mabs",
+        "tai2vec",
+        "bandits_blind_spot"
     ]
 }
