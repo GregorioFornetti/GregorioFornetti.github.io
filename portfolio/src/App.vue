@@ -34,7 +34,9 @@ let placeHolderInfo = {
   authors: [],
   month: 1,
   year: 1,
-  role: 'co_author'
+  role: 'co_author',
+  publication_abev: 'a',
+  publication_full: 'a'
 }
 let modalType = ref<string|undefined>(undefined)
 let info = ref<any>(placeHolderInfo)
@@ -97,6 +99,10 @@ router.isReady().then(() => {
         :projectUrl="info.url"
         :alreadyOpen="modalPaperOpen"
         :authorKeys="info.authors"
+        :month="info.month"
+        :year="info.year"
+        :publication_abev="info.publication_abev"
+        :publication_full="info.publication_full"
         displayModal
       />
 

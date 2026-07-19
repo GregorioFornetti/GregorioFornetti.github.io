@@ -13,6 +13,10 @@ const props = defineProps<{
   abstractText: string,
   contributionsText: string,
   authorKeys: string[],
+  publication_abev: string,
+  publication_full: string,
+  month: number,
+  year: number,
   projectUrl?: string,
   alreadyOpen?: boolean
 }>();

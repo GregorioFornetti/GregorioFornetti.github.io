@@ -18,6 +18,10 @@
                     :contributionsText="paper.contributions_text"
                     :projectUrl="paper.url"
                     :authorKeys="paper.authors"
+                    :month="paper.month"
+                    :year="paper.year"
+                    :publication_abev="paper.publication_abev"
+                    :publication_full="paper.publication_full"
                 />
             </div>
         </div>
