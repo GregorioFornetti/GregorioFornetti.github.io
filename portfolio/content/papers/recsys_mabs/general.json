@@ -11,5 +11,7 @@
     ],
     "role": "co_author",
     "month": 6,
-    "year": 2026
+    "year": 2026,
+    "publication_abev": "RecSys",
+    "publication_full": "RecSys '25: Proceedings of the Nineteenth ACM Conference on Recommender Systems"
 }

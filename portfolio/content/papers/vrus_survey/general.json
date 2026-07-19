@@ -14,5 +14,7 @@
     ],
     "role": "co_author",
     "month": 11,
-    "year": 2025
+    "year": 2025,
+    "publication_abev": "ESWA",
+    "publication_full": "ESWA: Expert Systems with Applications"
 }
