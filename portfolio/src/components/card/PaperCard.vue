@@ -17,6 +17,7 @@ const props = defineProps<{
   publication_full: string,
   month: number,
   year: number,
+  role: string,
   projectUrl?: string,
   alreadyOpen?: boolean
 }>();
@@ -34,6 +35,16 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
     :alreadyOpen="alreadyOpen"
     modalQueryType="paper"
   >
+    <template #card-header>
+      <div class="flex justify-between mb-3">
+        <span class="text-lg font-bold text-blue-600 dark:text-blue-400">
+          {{ publication_abev }}
+        </span>
+        <span class="text-lg font-bold text-blue-600 dark:text-blue-400">
+          {{ $t(`cards.${role}`) }}
+        </span>
+      </div>
+    </template>
     <template #card-body>
       <p v-html="abstractTextMd"></p>
     </template>

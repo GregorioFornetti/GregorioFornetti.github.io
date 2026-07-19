@@ -103,6 +103,7 @@ router.isReady().then(() => {
         :year="info.year"
         :publication_abev="info.publication_abev"
         :publication_full="info.publication_full"
+        :role="info.role"
         displayModal
       />
 

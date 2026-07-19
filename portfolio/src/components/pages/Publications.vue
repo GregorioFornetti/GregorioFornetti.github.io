@@ -22,6 +22,7 @@
                     :year="paper.year"
                     :publication_abev="paper.publication_abev"
                     :publication_full="paper.publication_full"
+                    :role="paper.role"
                 />
             </div>
         </div>
