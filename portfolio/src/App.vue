@@ -30,7 +30,11 @@ let placeHolderInfo = {
   url: 'a',
   about_text: 'a',
   people: [],
-  publications: []
+  publications: [],
+  authors: [],
+  month: 1,
+  year: 1,
+  role: 'co_author'
 }
 let modalType = ref<string|undefined>(undefined)
 let info = ref<any>(placeHolderInfo)
@@ -42,30 +46,26 @@ function updateModal() {
   modalType.value = router.currentRoute.value.query.modalType as string
   let modalId = router.currentRoute.value.query.modalId as string
 
-  if (modalType.value === 'paper') {
-    const foundPaper = (i18n.tm('papers') as any[]).find(p => p.slug === modalId)
-    foundPaper.about_text = ''
-    foundPaper.people = []
-    foundPaper.publications = []
-    info.value = foundPaper
+  let extraInfo = {}
 
-    console.log('opening paper')
+  if (modalType.value === 'paper') {
+    extraInfo = (i18n.tm('papers') as any[]).find(p => p.slug === modalId)
+
     modalPaperOpen.value = true
     modalProjectOpen.value = false
   } else if (modalType.value === 'project') {
-    const foundProject = (i18n.tm('projects') as any[]).find(p => p.slug === modalId)
-    foundProject.abstract = ''
-    info.value = foundProject
+    extraInfo = (i18n.tm('projects') as any[]).find(p => p.slug === modalId)
 
-    console.log('opening project')
     modalProjectOpen.value = true
     modalPaperOpen.value = false
   } else {
-    info.value = placeHolderInfo
 
-    console.log('closing modals')
     modalPaperOpen.value = false
     modalProjectOpen.value = false
+  }
+  info.value = {
+    ...placeHolderInfo,
+    ...extraInfo
   }
 }
 
@@ -96,6 +96,7 @@ router.isReady().then(() => {
         :contributionsText="info.contributions_text"
         :projectUrl="info.url"
         :alreadyOpen="modalPaperOpen"
+        :authorKeys="info.authors"
         displayModal
       />
 

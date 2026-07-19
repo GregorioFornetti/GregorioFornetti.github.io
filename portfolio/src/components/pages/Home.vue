@@ -73,6 +73,7 @@ const summary_md = computed(() => marked.parse(i18n.t('home.summary')));
                     :abstractText="paper.abstract"
                     :contributionsText="paper.contributions_text"
                     :projectUrl="paper.url"
+                    :authorKeys="paper.authors"
                 />
             </div>
         </div>
