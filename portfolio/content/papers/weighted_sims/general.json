@@ -1,4 +1,13 @@
 {
     "highlight": true,
-    "url": "https://dl.acm.org/doi/abs/10.1145/3672608.3707877"
+    "url": "https://dl.acm.org/doi/abs/10.1145/3672608.3707877",
+    "authors": [
+        "pedro",
+        "tofoli",
+        "greg",
+        "tiago"
+    ],
+    "role": "co_author",
+    "month": 5,
+    "year": 2025
 }

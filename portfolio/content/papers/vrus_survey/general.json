@@ -1,5 +1,18 @@
 {
     "highlight": true,
     "url": "https://www.sciencedirect.com/science/article/abs/pii/S0957417425021487",
-    "arxiv": "https://arxiv.org/pdf/2405.19202"
+    "arxiv": "https://arxiv.org/pdf/2405.19202",
+    "authors": [
+        "renato",
+        "greg",
+        "matheus",
+        "jean",
+        "eduardo",
+        "matheus_nogueira",
+        "pedro_lisboa",
+        "tiago"
+    ],
+    "role": "co_author",
+    "month": 11,
+    "year": 2025
 }

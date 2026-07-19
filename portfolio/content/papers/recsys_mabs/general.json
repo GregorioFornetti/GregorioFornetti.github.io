@@ -1,5 +1,15 @@
 {
     "highlight": true,
     "url": "https://dl.acm.org/doi/abs/10.1145/3705328.3748166",
-    "arxiv": "https://arxiv.org/pdf/2507.18756?"
+    "arxiv": "https://arxiv.org/pdf/2507.18756?",
+    "authors": [
+        "pedro",
+        "greg",
+        "tofoli",
+        "pietro",
+        "tiago"
+    ],
+    "role": "co_author",
+    "month": 6,
+    "year": 2026
 }
