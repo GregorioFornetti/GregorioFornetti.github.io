@@ -53,7 +53,7 @@ function closeModal() {
       </div>
       <div class="p-5">
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white"
         >
           {{ title }}
         </h5>

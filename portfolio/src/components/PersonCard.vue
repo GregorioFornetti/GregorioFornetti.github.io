@@ -23,6 +23,6 @@ function handleImageError() {
     <a :href="url" target="_blank" rel="noopener noreferrer">
         <img class="w-40 h-40 rounded-full mb-4" :src="imgSrc" :alt="name" @error="handleImageError" />
     </a>
-    <span class="font-bold text-xl mb-2 text-gray-900 text-center dark:text-white">{{ name }}</span>
+    <span class="font-bold text-lg mb-2 text-gray-900 text-center dark:text-white">{{ name }}</span>
   </div>
 </template>
