@@ -6,5 +6,8 @@
     "visit_project": "Visitar projeto",
     "access_paper": "Acessar artigo",
     "read_more": "Leia mais",
-    "publications": "Publicações"
+    "publications": "Publicações",
+    "first_author": "Primeiro autor",
+    "co_author": "Co-autor",
+    "supervisor": "Orientador"
 }
