@@ -50,6 +50,12 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
     </template>
     <template #modal-body>
       <div class="mb-4">
+        <p class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+          {{  publication_full }}
+        </p>
+        <p class="text-lg text-gray-800 dark:text-gray-200 mb-2">
+          {{  $t('cards.publication_date') }}: {{ month }}/{{ year }}
+        </p>
         <a
           v-if="projectUrl"
           :href="projectUrl"

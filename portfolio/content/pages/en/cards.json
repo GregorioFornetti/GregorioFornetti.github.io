@@ -10,5 +10,6 @@
     "first_author": "First author",
     "co_author": "Co-author",
     "supervisor": "Supervisor",
-    "authors": "Authors"
+    "authors": "Authors",
+    "publication_date": "Publication date"
 }
