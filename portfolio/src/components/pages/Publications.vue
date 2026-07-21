@@ -8,7 +8,12 @@
             <h2 class="text-4xl font-bold text-gray-700 dark:text-gray-300 mb-12">{{ $t('publications.title') }}</h2>
             <div class="flex flex-row flex-wrap justify-center max-w-7xl gap-6">
                 <PaperCard 
-                    v-for="paper in ($tm('papers') as any[])"
+                    v-for="paper in [...($tm('papers') as any[])].sort((a, b) => {
+                        if (b.year !== a.year) {
+                            return b.year - a.year; // Newest year first
+                        }
+                        return b.month - a.month;   // Newest month first
+                    })"
                     :id="paper.slug"
                     :key="paper.title" 
                     :title="paper.title"
