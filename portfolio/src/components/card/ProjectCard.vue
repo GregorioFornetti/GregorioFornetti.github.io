@@ -75,6 +75,11 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
             :contributionsText="paper.contributions_text"
             :projectUrl="paper.url"
             :authorKeys="paper.authors"
+            :month="paper.month"
+            :year="paper.year"
+            :publication_abev="paper.publication_abev"
+            :publication_full="paper.publication_full"
+            :role="paper.role"
         />
       </div>
     </template>

@@ -73,6 +73,7 @@ const contributionsTextMd = computed(() => marked.parse(props.contributionsText)
           v-for="personKey of authorKeys"
           :key="personKey"
           v-bind="peopleJson[personKey]"
+          :underline="personKey==='gregorio_fornetti'"
         />
       </div>
       <h2 class="modal_heading">{{  $t('cards.abstract')  }}</h2>
